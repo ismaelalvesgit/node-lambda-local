@@ -1,12 +1,12 @@
 require('dotenv').config()
 const lambdaLocal = require('lambda-local');
-const expres = require('express');
+const express = require('express');
 const cors = require('cors');
 
-const app = expres();
+const app = express();
 app.use(cors())
-app.use(expres.json())
-app.use(expres.urlencoded({extended:true}))
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
 
 const port = process.env.SERVER_PORT || 8080;
 const timeoutMs = process.env.LAMBDA_TIMEOUT || 3000;

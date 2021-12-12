@@ -16,19 +16,18 @@ code view:
 ```js
 require('dotenv').config()
 const lambdaLocal = require('lambda-local');
-const expres = require('express');
-const bodyParser = require('body-parser');
+const express = require('express');
 const cors = require('cors');
 
-const app = expres();
-app.use(cors)
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended:true}))
+const app = express();
+app.use(cors())
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
 
 const port = process.env.SERVER_PORT || 8080;
 const timeoutMs = process.env.LAMBDA_TIMEOUT || 3000;
-const lambdaPath = "seuCaminho/index.js"
-const event = {}
+const lambdaPath = "../caminho/index.js"
+let event = {}
 
 app.get('/', (req, res, next)=>{
     lambdaLocal.execute({
@@ -39,7 +38,7 @@ app.get('/', (req, res, next)=>{
             if(err){
                 next(err)
             }
-            res.json(data)
+            res.json(JSON.parse(data.body))
         },
         clientContext: JSON.stringify({clientId: 'xxxx'})
     });
