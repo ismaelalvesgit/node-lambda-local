@@ -7,7 +7,6 @@ Feramentas Utilizadas:
 * [Express](https://expressjs.com/pt-br/)
 * [lambda-local](https://www.npmjs.com/package/lambda-local)
 * [dotenv](https://www.npmjs.com/package/dotenv)
-* [bodyParser](https://www.npmjs.com/package/body-parser)
 * [cors](https://www.npmjs.com/package/cors)
 * [nodemon](https://nodemon.io/)
 
