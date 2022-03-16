@@ -1,4 +1,4 @@
-# Ambiente local para testes de lamda function
+# Ambiente local para testes de lambda function
 Este projeto foi criado para motivos academicos para minha aprendizagem pessoal
 em lambda function utilizado o [Node.js](https://nodejs.org/en/) e [Express](https://expressjs.com/pt-br/).
 
